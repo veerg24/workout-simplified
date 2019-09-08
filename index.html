@@ -1,0 +1,168 @@
+<head>
+    <style>
+        .info-label {
+            color: white;
+            font-weight: bold;
+            font-size: 20pt;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin-right: 10px;
+        }
+
+        .entry-menu {
+            flex-basis: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 40%;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+        }
+
+        .row-even {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        input {
+            border: 0;
+            outline: 0;
+            background: transparent;
+            caret-color: white;
+            transition: 0.5s;
+            font-size: 20pt;
+            font-weight: bold;
+            color: white;
+        }
+
+        input:hover {
+            border-bottom: 2px solid white;
+        }
+
+        body {
+  background-color: #111113;
+}
+
+#head {
+  font-weight: bold;
+  font-family: Helvetica;
+  color: white;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+.light {
+	display: inline-block;
+	border: 10px solid gray;
+	border-radius: 50%;
+	padding: 25px;
+	margin: 80px 20px;
+  height: 300px;
+  width: 300px;
+  margin-left:55px;
+}
+
+.button {
+  color: gray;
+  font-size: 80px;
+  font-weight: bold;
+  border: none;
+  width: 300px;
+  height: 300px;
+  background: none;
+}
+
+.button:focus {
+  outline:0;
+}
+
+.light:hover .button{
+  cursor: pointer;
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+  border: none;
+  width: 300px;
+  height: 300px;
+  background: none;
+}
+
+.light:hover {
+	border: 10px solid red;
+	border-radius: 50%;
+	padding: 25px;
+	margin: 80px 20px;
+  height: 300px;
+  width: 300px;
+  margin-left: 55px;
+}
+
+#myBar {
+  color: white;
+}
+
+
+    </style>
+</head>
+
+<body style="height:100%;padding:0px;margin:0px;">
+    <div style="display:flex; flex-direction:row; justify-items:center;align-items:center;background:#111113;height:100%;">
+        <div style="flex-basis:66%;">
+      <div class="light">
+        <button class="button" onclick="lightbutton()">Simplify</button>
+        </div>
+        </div>
+        <div class="entry-menu">
+            <div class="row-even">
+                <button class="" id="male" onclick="male()">Male</button>
+                <button class="" id="female" onclick="female()">Female</button>
+            </div>
+            <button onclick="submitData()">Submit</button>
+        </div>
+        =
+    </div>
+</body>
+
+<script>
+    //User data defaults
+    window.userData = {
+        'age': 25,
+        'weight': 80,
+        'height': 165,
+        'gender': 'male',
+    }
+
+    function male() {
+        userData['gender'] = 'male'
+    }
+    function female() {
+        userData['gender'] = 'female'
+    }
+    function submitData() {
+        document.location.href = './secondpage.html'
+    }
+
+    const entryMenu = document.querySelector('.entry-menu')
+    const titles = ["Height", "Weight", "Age"]
+    for (let title of titles) {
+        title = title + ":"
+        const row = document.createElement('div')
+        row.className = 'row' + ' ' + title + ' ' + 'label'
+        const label = document.createElement('div')
+        label.className = 'info-label'
+        label.innerText = title
+        const input = document.createElement('input')
+        input.size = 3
+        //input.type = 'text'
+        row.appendChild(label)
+        row.appendChild(input)
+        entryMenu.prepend(row)
+    }
+    const genderContainer = document.querySelector('.row-even')
+</script>
+
+</html
