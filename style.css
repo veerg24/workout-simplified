@@ -1,0 +1,63 @@
+body {
+  background-color: #111113;
+}
+
+#head {
+  font-weight: bold;
+  font-family: Helvetica;
+  color: white;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+.light {
+	display: inline-block;
+	border: 10px solid gray;
+	border-radius: 50%;
+	padding: 25px;
+	margin: 80px 20px;
+  height: 300px;
+  width: 300px;
+  margin-left:55px;
+}
+
+.button {
+  color: gray;
+  font-size: 80px;
+  font-weight: bold;
+  border: none;
+  width: 300px;
+  height: 300px;
+  background: none;
+}
+
+.button:focus {
+  outline:0;
+}
+
+.light:hover .button{
+  cursor: pointer;
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+  border: none;
+  width: 300px;
+  height: 300px;
+  background: none;
+}
+
+.light:hover {
+  display: inline-block;
+	border: 10px solid red;
+	border-radius: 50%;
+	padding: 25px;
+	margin: 80px 20px;
+  height: 300px;
+  width: 300px;
+  margin-left: 55px;
+}
+
+#myBar {
+  color: white;
+}
+
